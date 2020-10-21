@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in movie"
+
+            :class="{active: index === currentIndex}"
+            @click="changeColor(index)">
+            {{item}}
+        </li>
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      movie: ['精疲力竭', '随心所欲', '狂人皮埃罗'],
+      currentIndex: -1
+    },methods: {
+      changeColor(index){
+        this.currentIndex = index;
+      }
+    }
+  })
+</script>
+</body>
+</html>
