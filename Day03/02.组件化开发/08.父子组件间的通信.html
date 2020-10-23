@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn2 :cMovie="movie" :cMessage="message"></cpn2>
+</div>
+<template id="tcpn">
+  <div>
+    <p>{{cmovie}}</p>
+    <p>{{cmessage}}</p>
+  </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+  // 子组件
+  const cpnC2 = Vue.extend({
+    template: '#tcpn',
+    props: ['cmovie','cmessage'],
+  })
+
+  //根组件
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello",
+      movie: ['123','321','222']
+    },
+    components: {
+      cpn2: cpnC2
+    }
+
+  })
+</script>
+</body>
+</html>
