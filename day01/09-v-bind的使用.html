@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="app">
+    <img v-bind:src="imageUrl" alt="">
+<!--    语法糖-->
+    <img :src="imageUrl" alt="">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // let定义变量，const定义常量
+    const vue = new Vue({
+        el: '#app',
+        data: {
+            imageUrl: 'https://cdn.nlark.com/yuque/0/2020/png/1930265/1602982305611-58eefcda-bc2d-4b35-a57f-cd8337fac016.png'
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    Hello,{{message}}
+<!--    Mustache语法不仅可以写变量，还可以写表达式-->
+    {{firstName+lastName}}
+    {{firstName+' '+lastName}}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // let定义变量，const定义常量
+    const vue = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊',
+            firstName: 'Lewis',
+            lastName: 'Liu'
+        }
+    })
+
+</script>
+</body>
+</html>
