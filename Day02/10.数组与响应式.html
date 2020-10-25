@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in letters" >{{item}}</li>
+    </ul>
+    <button @click="btnClick">按钮</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            letters: ['a','b','c','d','e']
+        },
+        methods: {
+            btnClick() {
+                // 1.push可以做到响应式
+                // this.letters.push("aaa")
+
+                // 2.pop()可以做到响应式，pop为删除最后一个元素
+                // this.letters.pop()
+
+                // 3.shift()可以做到响应式，shift为删除第一个元素
+                // this.letters.shift();
+
+                // 4.unshift()可以做到响应式，它为在数组前添加元素
+                // unshift()
+
+                // 5.splice()，响应式
+                //作用：可以删除元素/添加元素/替换元素
+                //删除：splice(start)
+                //替换：splice(start,2,'x','y')
+                //插入：splice(start,0,'x','y')
+
+                // 6.sort()，响应式
+
+                // 7.reverse()，响应式
+
+
+                // 8.(1)但通过索引修改数组元素，是没有响应式的
+                // this.letters[0] = 'aaa';
+                //  (2)正确替换元素的方式：
+                // this.letters.splice(0,1,'aaa')
+                //  (3)通过Vue实现修改
+                // Vue.set(this.letters,0,'aaa')
+            }
+        }
+    })
+</script>
+</body>
+</html>

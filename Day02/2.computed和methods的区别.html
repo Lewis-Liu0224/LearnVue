@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{fullNameByM()}}</h2>
+    <h2>{{fullNameByM()}}</h2>
+    <h2>{{fullNameByM()}}</h2>
+    <h2>{{fullNameByM()}}</h2>
+
+    <h2>{{fullNameByC}}</h2>
+    <h2>{{fullNameByC}}</h2>
+    <h2>{{fullNameByC}}</h2>
+    <h2>{{fullNameByC}}</h2>
+    <h2>{{fullNameByC}}</h2>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            firstName: "Lewis",
+            lastName: "Liu"
+        },
+        methods: {
+            fullNameByM: function () {
+                console.log("method被调用了")
+                return this.firstName + " " + this.lastName;
+            }
+        },
+        computed: {
+            fullNameByC: {
+                get: function () {
+                    console.log("computed被调用了")
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

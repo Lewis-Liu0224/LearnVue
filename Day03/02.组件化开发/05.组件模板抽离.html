@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn></cpn>
+  <cpn></cpn>
+  <npc></npc>
+  <npc></npc>
+  <npc></npc>
+</div>
+
+<!--组件模板抽离-->
+<!--方法1-->
+<script type="text/x-template" id="cpn1">
+<div>
+  <h2>我是标题</h2>
+  <p>111111</p>
+</div>
+</script>
+<!--方法2-->
+<template id="cpn2">
+  <div>
+    <h2>我是标题</h2>
+    <p>222222</p>
+  </div>
+</template>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  Vue.component('cpn',{
+    template: "#cpn1"
+  })
+
+  Vue.component('npc',{
+    template: "#cpn2"
+  })
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello"
+    }
+  })
+</script>
+</body>
+</html>
